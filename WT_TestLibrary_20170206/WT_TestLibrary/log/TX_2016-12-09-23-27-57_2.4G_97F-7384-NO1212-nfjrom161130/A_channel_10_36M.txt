@@ -1,0 +1,4 @@
+power	  evm	  ppm 	  mask 	  result 
+20.07	-21.27	21.2	0.0	Fail
+20.14	-21.35	20.63	0.0	Fail
+20.44	-21.42	20.39	0.0	Fail

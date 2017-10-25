@@ -1,0 +1,51 @@
+﻿python RX_test.py -m 97f -B 5g -i wlan0 -f # -a a_att.csv -b b_att.csv -P power_start.csv -C com5 -r 38400
+python RX_test.py -m P2 -B 5g -i rai0 -f $ -a a_att.csv -b b_att.csv -P power_start.csv -C com5 -r 57600
+python RX_test.py -m R1 -B 2.4g -i ra0 -f CMD> -a a_att.csv -b b_att.csv -P power_start.csv -C com5 -r 115200
+
+python RX_test.py -m 97f-7384 -B 5g -i wlan0 -f # -a a_att.csv -b b_att.csv -P power_start.csv -C com5 -r 38400
+python RX_test.py -m 97f-7384 -B 2.4g -i wlan1 -f # -a a_att.csv -b a_att.csv -P power_start.csv -C com5 -r 38400
+
+
+python RX_test.py -m 97f-7357 -B 2.4g -i wlan1 -f # -a a_att.csv -b a_att.csv -P power_start.csv -C com5 -r 38400
+python RX_test.py -m P1 -B 2.4g -i wlan0 -f $ -a a_att.csv -b b_att.csv -P power_start.csv -C com5 -r 38400
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TX命令
+python TX_mp_test.py -a a_att.csv -b b_att.csv -P 7357-14rate.txt -R RTL_mp_rate.txt -S WiFi(B).cfg -m 97f-7357 -f # -C com5 -r 38400 -i wlan1 -B 2.4g
+python TX_mp_test.py -a a_att.csv -b b_att.csv -P 7357-14rate.txt -R RTL_mp_rate.txt -S WiFi(B).cfg -m 97f-7357 -f # -C com5 -r 38400 -i wlan0 -B 5g
+
+
+
+
+
+
+
+
+
+读取power rate
+python recordRatePower.py -m 97f-7384  -f # -r 38400 --iface1 wlan1 --iface2 wlan0 -F 97f-7384-1212_ratePower.txt -C COM5
+python recordRatePower_new.py -m 97f-7384  -f # -r 38400 --iface1 wlan1 --iface2 wlan0 -F 97f-7384-1218_ratePower.txt -C COM5
+python recordRatePower_new.py -m P1  -f $ -r 38400 --iface1 wlan0  -F P1_7283_ratePower.txt -C COM8
+python recordRatePower_new.py -m 96d  -f # -r 38400 --iface1 wlan0  -F 96d_ratePower.txt -C COM3
+
+python TX_mp_test.py -a a_att.csv -b b_att.csv -P 97f-7384-1212_ratePower.txt -R RTL_mp_rate.txt -S WiFi(B).cfg -m 97f-7384 -f # -C com5 -r 38400 -i wlan0 -B 5g
+python TX_mp_test.py -a a_att.csv -b b_att.csv -P P1_7283_ratePower.txt -R RTL_mp_rate.txt -S WiFi(B).cfg -m P1 -f # -C com5 -r 38400 -i wlan0 -B 2.4g
+python TX_mp_test.py -a a_att.csv -b b_att.csv -P 96d_ratePower.txt -R RTL_mp_rate.txt -S WiFi(B).cfg -m 96d -f # -C com3 -r 38400 -i wlan0 -B 2.4g
+
+python adjust_tx_index.py -a a_att.csv -b b_att.csv  -R RTL_mp_rate.txt -S WiFi(B).cfg -m 96d -f # -C com3 -r 38400 -i wlan0 -B 2.4g
+

@@ -1,0 +1,2 @@
+power,	 Rx_OK,	 send_total,  RX_OK_Percent 
+-66	 0	 1000	 0.0%

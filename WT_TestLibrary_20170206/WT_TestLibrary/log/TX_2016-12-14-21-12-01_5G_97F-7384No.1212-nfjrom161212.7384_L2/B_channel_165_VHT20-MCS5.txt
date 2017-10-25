@@ -1,0 +1,4 @@
+power	  evm	  ppm 	  mask 	  result 
+19.56	-31.31	-2.76	0.0	Pass
+19.52	-31.47	-2.9	0.0	Pass
+19.5	-31.26	-2.62	0.0	Pass

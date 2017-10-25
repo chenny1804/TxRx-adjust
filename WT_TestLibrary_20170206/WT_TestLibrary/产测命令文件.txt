@@ -1,0 +1,64 @@
+
+/proc/wlan0
+
+ifconfig wlan0 down
+iwpriv wlan0 set_mib mp_specific=1
+ifconfig wlan0 up
+iwpriv wlan0 mp_start   
+//iwpriv wlan0 set_mib channel=1                开启产测模式
+
+
+TX:
+iwpriv wlan0 mp_channel 1
+iwpriv wlan0 mp_txpower patha=63,pathb=63
+iwpriv wlan0 mp_bandwidth 40M=0,shortGI=0
+iwpriv wlan0 mp_rate 2
+iwpriv wlan0 mp_ant_tx a
+iwpriv wlan0 mp_ctx background,pkt
+
+iwpriv mp_ctx count=1000000,pkt,background
+iwpriv wlan0 mp_query
+
+iwpriv wlan0 mp_ctx stop     TX STOP
+
+
+
+RX:
+iwpriv wlan0 mp_bandwidth 40M=0,shortGI=0
+iwpriv wlan0 mp_rate 22
+iwpriv wlan0 mp_ant_rx a
+iwpriv wlan0 mp_arx start
+iwpriv wlan0 mp_query
+iwpriv wlan0 mp_arx stop
+
+
+
+
+
+
+
+RTL
+
+iwpriv wlan1  mp_arx start
+iwpriv wlan1  mp_arx b
+iwpriv wlan1  mp_arx stop
+iwpriv wlan1 mp_query
+
+ob1 d03 04
+idd1 dd8
+
+
+
+
+HW_WLAN0_TX_POWER_CCK_A=282828282929292a2a2b2b2c2c2d
+HW_WLAN0_TX_POWER_CCK_B=2828282828282828292929292a2a
+
+
+
+
+
+
+
+
+
+
